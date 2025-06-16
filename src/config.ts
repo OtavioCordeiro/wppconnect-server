@@ -1,7 +1,7 @@
 import { ServerOptions } from './types/ServerOptions';
 
 export default {
-  secretKey: 'THISISMYSECURETOKEN',
+  secretKey: '8ecf0bf4-d3b4-4835-8816-a33eb85b95cc',
   host: 'http://localhost',
   port: '21465',
   deviceName: 'WppConnect',
@@ -11,20 +11,20 @@ export default {
   maxListeners: 15,
   customUserDataDir: './userDataDir/',
   webhook: {
-    url: null,
-    autoDownload: true,
+    url: "http://notifyg-app:5010/api/whatsapp/webhook",
+    autoDownload: false,
     uploadS3: false,
     readMessage: true,
     allUnreadOnStart: false,
     listenAcks: true,
-    onPresenceChanged: true,
-    onParticipantsChanged: true,
-    onReactionMessage: true,
-    onPollResponse: true,
-    onRevokedMessage: true,
-    onLabelUpdated: true,
+    onPresenceChanged: false,
+    onParticipantsChanged: false,
+    onReactionMessage: false,
+    onPollResponse: false,
+    onRevokedMessage: false,
+    onLabelUpdated: false,
     onSelfMessage: false,
-    ignore: ['status@broadcast'],
+    ignore: ['fromMe', 'status@broadcast', 'onAck', 'onAnyMessage', 'onInterfaceChange'],
   },
   websocket: {
     autoDownload: false,
